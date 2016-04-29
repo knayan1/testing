@@ -71,14 +71,14 @@ sub show_add_product_html {
 }
 
 sub add_product {
-	my $prd_name  = $q->param('prd_name') || '';
-	my $prd_type  = $q->param('prd_type') || '';
-	my $prd_qty   = $q->param('prd_qty') || '';
+	my $prd_name  = $q->param('prd_name')  || '';
+	my $prd_type  = $q->param('prd_type')  || '';
+	my $prd_qty   = $q->param('prd_qty')   || '';
 	my $prd_price = $q->param('prd_price') || '';
-	my $prd_desc  = $q->param('prd_desc') || '';
-	my $prd_wt    = $q->param('prd_wt') || '';
+	my $prd_desc  = $q->param('prd_desc')  || '';
+	my $prd_wt    = $q->param('prd_wt')    || '';
 	my $prd_stock = $q->param('prd_stock') || '';
-	my $prd_note  = $q->param('prd_note') || '';
+	my $prd_note  = $q->param('prd_note')  || '';
 		
 	my $query = qq~insert into products (ProductName, ProductDescription, CategoryID, QuantityPerUnit, UnitPrice, UnitWeight, UnitsInStock, Note )
 		values ('$prd_name' ,'$prd_type' ,'$prd_qty'  ,'$prd_price' ,'$prd_desc' ,'$prd_wt'   ,'$prd_stock' ,'$prd_note' )		~;
