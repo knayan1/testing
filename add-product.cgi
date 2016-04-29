@@ -86,7 +86,6 @@ sub add_product {
 	
 	my $dbh = Database::getDbh();
 	my $sth = $dbh->prepare("insert into products (ProductName, ProductDescription, CategoryID, QuantityPerUnit, UnitPrice, UnitWeight, UnitsInStock, Note ) values (?,?,?,?,?,?,?,?)");
-	$sth->execute($prd_name ,$prd_type ,$prd_qty  ,$prd_price ,$prd_desc ,$prd_wt   ,$prd_stock ,$prd_note);
+	$sth->execute($prd_name ,$prd_desc ,$prd_type,  $prd_qty,$prd_price , $prd_wt   ,$prd_stock ,$prd_note);
 	print "insertd rows" if $sth->rows;
 }
- # '$prd_name' ,'$prd_type' ,'$prd_qty'  ,'$prd_price' ,'$prd_desc' ,'$prd_wt'   ,'$prd_stock' ,'$prd_note' 
