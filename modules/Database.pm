@@ -12,6 +12,7 @@ sub getDbh {
 	my $uname = $args->{username} || 'root';
 	my $pass = $args->{password} || 'manager';
 	$dbh = DBI->connect($dsn, $uname, $pass ,  {InactiveDestroy => 1, RaiseError => 1, PrintError => 1});
+	return $dbh;
 }
 
 # sub select {
